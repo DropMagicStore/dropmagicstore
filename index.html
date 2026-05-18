@@ -104,9 +104,16 @@
         <div class="grid">
             
             <div class="card">
-                <div class="card-img">
+                <div class="card-img" id="watch-gallery" style="position: relative; height: 280px; overflow: hidden;">
                     <span class="tag">Active Style</span>
-                    <img src="https://ae01.alicdn.com/kf/S720fb97a0f6745ecbb3c9d72491a5e128/Silicone-Sport-Band-For-Apple-Watch-ultra-Band-Case-Strap-40mm-41mm-42mm-49mm-44mm-45mm.jpg" alt="AeroFit Sport Silicone Watch Band" style="width:100%; height:100%; object-fit:cover;">
+                    <img id="watch-main" src="watch.jpg.png" alt="AeroFit Sport Silicone Watch Band" style="width:100%; height:100%; object-fit:cover;">
+                    
+                    <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; background: rgba(15, 23, 42, 0.6); padding: 4px 8px; border-radius: 20px; z-index: 10;">
+                        <span onclick="document.getElementById('watch-main').src='watch.jpg.png'" style="width: 8px; height: 8px; background: white; border-radius: 50%; cursor: pointer;"></span>
+                        <span onclick="document.getElementById('watch-main').src='watch1.jpg.png'" style="width: 8px; height: 8px; background: #94a3b8; border-radius: 50%; cursor: pointer;"></span>
+                        <span onclick="document.getElementById('watch-main').src='watch2.jpg.png'" style="width: 8px; height: 8px; background: #94a3b8; border-radius: 50%; cursor: pointer;"></span>
+                        <span onclick="document.getElementById('watch-main').src='watch3.jpg.png'" style="width: 8px; height: 8px; background: #94a3b8; border-radius: 50%; cursor: pointer;"></span>
+                    </div>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">AeroFit™ Breathable Silicone Sport Band</h3>
@@ -120,25 +127,39 @@
             </div>
 
             <div class="card">
-                <div class="card-img">
-                    <span class="tag">Outdoor Gear</span>
-                    <img src="https://ae01.alicdn.com/kf/S064506b3f9fc40d3b6645a2789bd07f3Y/2025-2000X25-HD-Monocular-Telescope-Compact-Portable-for-Travel-Hiking-Fishing-Camping-Stargazing-Concerts-Bird-Watching.jpg" alt="EagleEye HD Monocular Telescope" style="width:100%; height:100%; object-fit:cover;">
+                <div class="card-img" id="jersey-gallery" style="position: relative; height: 280px; overflow: hidden;">
+                    <span class="tag">Winter Essential</span>
+                    <img id="jersey-main" src="jersey.jpg.png" alt="AuraKnit Luxury Turtleneck Sweater" style="width:100%; height:100%; object-fit:cover;">
+                    
+                    <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; background: rgba(15, 23, 42, 0.6); padding: 4px 8px; border-radius: 20px; z-index: 10;">
+                        <span onclick="document.getElementById('jersey-main').src='jersey.jpg.png'" style="width: 8px; height: 8px; background: white; border-radius: 50%; cursor: pointer;"></span>
+                        <span onclick="document.getElementById('jersey-main').src='jersey1.jpg.png'" style="width: 8px; height: 8px; background: #94a3b8; border-radius: 50%; cursor: pointer;"></span>
+                        <span onclick="document.getElementById('jersey-main').src='jersey2.jpg.png'" style="width: 8px; height: 8px; background: #94a3b8; border-radius: 50%; cursor: pointer;"></span>
+                        <span onclick="document.getElementById('jersey-main').src='jersey3.jpg.png'" style="width: 8px; height: 8px; background: #94a3b8; border-radius: 50%; cursor: pointer;"></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">EagleEye™ HD 2000X25 Pocket Monocular</h3>
-                    <div class="rating">★★★★★ <span style="color:#64748b">(5,000+ sold)</span></div>
-                    <p class="card-text">Incredible distance viewing right in your pocket. Features crisp BK7 prism optics and comes with a universal smartphone alignment clip. Perfect for hiking, bird watching, camping, concerts, and capturing distant phone photos.</p>
+                    <h3 class="card-title">AuraKnit™ Cashmere-Soft Turtleneck Sweater</h3>
+                    <div class="rating">★★★★★ <span style="color:#64748b">(418 reviews)</span></div>
+                    <p class="card-text">The ultimate blend of cozy warmth and effortless style. Crafted from an ultra-soft, premium knit blend that mimics the cloud-like feel of luxury cashmere. A classic cold-weather staple designed for perfect layering all season long.</p>
                     <div class="price-row">
-                        <div class="price">$39.99 <span class="old-price">$79.99</span></div>
+                        <div class="price">$34.99 <span class="old-price">$69.99</span></div>
                         <a href="#" class="btn" style="padding: 8px 16px; font-size: 0.9rem;">Buy Now</a>
                     </div>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-img">
+                <div class="card-img" id="spoon-gallery" style="position: relative; height: 280px; overflow: hidden;">
                     <span class="tag">Smart Kitchen</span>
-                    <img src="https://ae01.alicdn.com/kf/S70df2df9fa6e4651919bc0427c3da33eK/Digital-Measuring-Spoon-0-1g-High-Precision-Electronic-Kitchen-Scale.jpg" alt="ChefScale Smart Measuring Spoon" style="width:100%; height:100%; object-fit:cover;">
+                    <img id="spoon-main" src="spoon.jpg.png" alt="ChefScale Smart Measuring Spoon" style="width:100%; height:100%; object-fit:cover;">
+                    
+                    <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; background: rgba(15, 23, 42, 0.6); padding: 4px 8px; border-radius: 20px; z-index: 10;">
+                        <span onclick="document.getElementById('spoon-main').src='spoon.jpg.png'" style="width: 8px; height: 8px; background: white; border-radius: 50%; cursor: pointer;"></span>
+                        <span onclick="document.getElementById('spoon-main').src='spoon1.jpg.png'" style="width: 8px; height: 8px; background: #94a3b8; border-radius: 50%; cursor: pointer;"></span>
+                        <span onclick="document.getElementById('spoon-main').src='spoon2.jpg.png'" style="width: 8px; height: 8px; background: #94a3b8; border-radius: 50%; cursor: pointer;"></span>
+                        <span onclick="document.getElementById('spoon-main').src='spoon3.jpg.png'" style="width: 8px; height: 8px; background: #94a3b8; border-radius: 50%; cursor: pointer;"></span>
+                    </div>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">ChefScale™ Smart Digital Measuring Spoon</h3>
