@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DropMagicStore | Trending Solutions</title>
+    
+    <script src="https://www.paypal.com/sdk/js?client-id=BAA4P-y11iAk8iWkaaxTXVJ6piqG_2Y_DWaxpMfeqo4I3W6_dEvhWvlMtdpeYlenxE5yyV1WHvbgSfiM98&components=buttons&disable-funding=venmo&currency=USD"></script>
+
     <style>
         :root {
             --primary: #2563eb;
@@ -45,17 +48,20 @@
         .card { background: white; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.3s; }
         .card:hover { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
         .card-img { width: 100%; height: 280px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-weight: bold; position: relative; }
-        .tag { position: absolute; top: 15px; left: 15px; background: var(--accent); color: white; padding: 4px 10px; font-size: 0.75rem; font-weight: 700; border-radius: 4px; text-transform: uppercase; }
+        .tag { position: absolute; top: 15px; left: 15px; background: var(--accent); color: white; padding: 4px 10px; font-size: 0.75rem; font-weight: 700; border-radius: 4px; text-transform: uppercase; z-index: 5; }
         .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
         .card-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
         .rating { color: #f59e0b; font-size: 0.9rem; margin-bottom: 10px; }
         .card-text { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; flex-grow: 1; }
-        .price-row { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+        .price-row { display: flex; flex-direction: column; gap: 15px; margin-top: auto; border-top: 1px solid #f1f5f9; padding-top: 15px; }
         .price { font-size: 1.3rem; font-weight: 800; color: var(--dark); }
         .old-price { font-size: 1rem; color: var(--text-muted); text-decoration: line-through; margin-left: 8px; font-weight: 400; }
+        
+        /* PayPal Button Containment Style */
+        .paypal-btn-container { width: 100%; min-height: 45px; }
 
         /* Footer */
-        footer { background: var(--dark); color: #94a3b8; padding: 60px 5% 30px; font-size: 0.9rem; }
+        footer { background: var(--dark); color: #94a3b8; padding: 60px 5% 30px; font-size: 0.9rem; margin-top: 40px; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
         .footer-col h4 { color: white; margin-bottom: 15px; font-size: 1rem; }
         .footer-col ul { list-style: none; }
@@ -73,14 +79,14 @@
         <div class="logo">Drop<span>Magic</span>Store</div>
         <div class="nav-links">
             <a href="#products">Shop All</a>
-            <a href="#about">Track Order</a>
-            <a href="#contact">Support</a>
+            <a href="#">Track Order</a>
+            <a href="#">Support</a>
         </div>
     </nav>
 
     <header class="hero">
-        <h1>Viral Problem Solvers. Clear Pricing.</h1>
-        <p>We test hundreds of trending essentials daily to bring you the highest quality viral innovations with guaranteed fast, secure shipping.</p>
+        <h1>Viral Solutions. Delivered Fast.</h1>
+        <p>We source verified social media essentials to bring you verified, functional innovations with secure global tracked shipping networks.</p>
         <a href="#products" class="btn">Explore Trending Collection</a>
     </header>
 
@@ -91,11 +97,11 @@
         </div>
         <div class="badge-item">
             <h3>🔒 Secure Checkouts</h3>
-            <p>SSL Encypted Visa, Mastercard & Apple Pay</p>
+            <p>Processed with multi-layer PayPal Encryption</p>
         </div>
         <div class="badge-item">
             <h3>🛡️ 30-Day Money Back</h3>
-            <p>Risk-free returns if you aren't satisfied</p>
+            <p>Risk-free returns if you aren't completely satisfied</p>
         </div>
     </section>
 
@@ -118,10 +124,10 @@
                 <div class="card-body">
                     <h3 class="card-title">AeroFit™ Breathable Silicone Sport Band</h3>
                     <div class="rating">★★★★★ <span style="color:#64748b">(1,511 reviews)</span></div>
-                    <p class="card-text">Engineered for high-intensity training and daily wear. Made from ultra-soft, medical-grade rubber with an air-flow design that keeps your wrist dry and comfortable. Compatible with iWatch Series 4-9, SE, and Ultra (38mm - 49mm).</p>
+                    <p class="card-text">Engineered for training and daily wear. High-grade airflow design rubber keeps your wrist completely dry. Fits iWatch 4-9, SE, & Ultra (38mm - 49mm).</p>
                     <div class="price-row">
                         <div class="price">$14.99 <span class="old-price">$29.99</span></div>
-                        <a href="#" class="btn" style="padding: 8px 16px; font-size: 0.9rem;">Buy Now</a>
+                        <div id="paypal-button-watch" class="paypal-btn-container"></div>
                     </div>
                 </div>
             </div>
@@ -141,10 +147,10 @@
                 <div class="card-body">
                     <h3 class="card-title">AuraKnit™ Cashmere-Soft Turtleneck Sweater</h3>
                     <div class="rating">★★★★★ <span style="color:#64748b">(418 reviews)</span></div>
-                    <p class="card-text">The ultimate blend of cozy warmth and effortless style. Crafted from an ultra-soft, premium knit blend that mimics the cloud-like feel of luxury cashmere. A classic cold-weather staple designed for perfect layering all season long.</p>
+                    <p class="card-text">Cozy warmth and effortless style. Premium knit blend that perfectly mimics luxury cashmere weight without the luxury cost.</p>
                     <div class="price-row">
                         <div class="price">$34.99 <span class="old-price">$69.99</span></div>
-                        <a href="#" class="btn" style="padding: 8px 16px; font-size: 0.9rem;">Buy Now</a>
+                        <div id="paypal-button-jersey" class="paypal-btn-container"></div>
                     </div>
                 </div>
             </div>
@@ -164,10 +170,10 @@
                 <div class="card-body">
                     <h3 class="card-title">ChefScale™ Smart Digital Measuring Spoon</h3>
                     <div class="rating">★★★★★ <span style="color:#64748b">(2,412 reviews)</span></div>
-                    <p class="card-text">Eliminate cooking guesswork. This intelligent kitchen tool features a high-precision LCD screen calibrated down to 0.1g increments. Instantly measure coffee, baking flour, protein powders, or seasoning directly as you scoop.</p>
+                    <p class="card-text">Intelligent kitchen tool with a high-precision LCD screen calibrated to 0.1g increments. Perfect for logging coffee, flour, or powders.</p>
                     <div class="price-row">
                         <div class="price">$19.99 <span class="old-price">$39.99</span></div>
-                        <a href="#" class="btn" style="padding: 8px 16px; font-size: 0.9rem;">Buy Now</a>
+                        <div id="paypal-button-spoon" class="paypal-btn-container"></div>
                     </div>
                 </div>
             </div>
@@ -193,15 +199,66 @@
                 <h4>Customer Care</h4>
                 <ul>
                     <li><a href="#">Track Package Status</a></li>
-                    <li><a href="#">Submit a Ticket</a></li>
                     <li><a href="#">Contact Support</a></li>
                 </ul>
             </div>
         </div>
-        <div class="copyright">
-            &copy; 2026 DropMagicStore. All rights reserved. 
-        </div>
+        <div class="copyright">&copy; 2026 DropMagicStore. All rights reserved.</div>
     </footer>
 
+    <script>
+        // 1. Apple Watch Band Checkout Setup
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        description: "AeroFit™ Breathable Silicone Sport Band",
+                        amount: { value: '14.99' }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name + '! Check your email for shipping details.');
+                });
+            }
+        }).render('#paypal-button-watch');
+
+        // 2. Winter Jersey Sweater Checkout Setup
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        description: "AuraKnit™ Cashmere-Soft Turtleneck Sweater",
+                        amount: { value: '34.99' }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name + '! Check your email for shipping details.');
+                });
+            }
+        }).render('#paypal-button-jersey');
+
+        // 3. Digital Spoon Scale Checkout Setup
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        description: "ChefScale™ Smart Digital Measuring Spoon",
+                        amount: { value: '19.99' }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name + '! Check your email for shipping details.');
+                });
+            }
+        }).render('#paypal-button-spoon');
+    </script>
+</body>
+</html>
 </body>
 </html>
